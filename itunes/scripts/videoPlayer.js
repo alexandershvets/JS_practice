@@ -1,11 +1,11 @@
 export const videoPlayerInit = () => {
 
-  const videoPlayer = document.querySelector('.video-player'),
-    videoButtonPlay = document.querySelector('.video-button__play'),
-    videoButtonStop = document.querySelector('.video-button__stop'),
-    videoProgress = document.querySelector('.video-progress'),
-    videoTimePassed = document.querySelector('.video-time__passed'),
-    videoTimeTotal = document.querySelector('.video-time__total');
+  const videoPlayer = document.querySelector('.video-player');
+  const videoButtonPlay = document.querySelector('.video-button__play');
+  const videoButtonStop = document.querySelector('.video-button__stop');
+  const videoProgress = document.querySelector('.video-progress');
+  const videoTimePassed = document.querySelector('.video-time__passed');
+  const videoTimeTotal = document.querySelector('.video-time__total');
 
   const toggleIcon = () => {
     if (videoPlayer.paused) {
@@ -58,7 +58,7 @@ export const videoPlayerInit = () => {
     videoTimeTotal.textContent = `${addZerro(minuteTotal)}:${addZerro(secondsTotal)}`;
   });
 
-  videoProgress.addEventListener('change', () => {
+  videoProgress.addEventListener('input', () => {
     const duration = videoPlayer.duration;
     const value = videoProgress.value;
 
